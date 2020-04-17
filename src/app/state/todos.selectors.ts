@@ -15,7 +15,7 @@ export const selectLoading = createSelector(
 
 export const selectLoaded = createSelector(
   selectFeature,
-  (state: AppState) => state.loading
+  (state: AppState) => state.loaded
 );
 
 export const selectError = createSelector(
