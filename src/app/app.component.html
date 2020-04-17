@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>To-Do List</h2>
+  <div class="operations">
+    <div class="add">
+      <input
+        type="text"
+        placeholder="Enter a to-do task..."
+        [(ngModel)]="newTodoTitle"
+        (keyup.enter)="addTodo()"
+      />
+      <button (click)="addTodo()"><span class="fa fa-plus"></span></button>
+    </div>
+  </div>
+  <ul *ngIf="!($loading | async)">
+    <li *ngFor="let todo of $todos | async; let id = index">
+      <todo-list-item
+        [title]="todo.title"
+        [completed]="todo.completed"
+        [index]="id + 1"
+        (onCompleteChanged)="onCompleteChanged($event, id + 1)"
+      ></todo-list-item>
+    </li>
+  </ul>
+  <div *ngIf="($loading | async)" class="error-message">
+    <span class="fa fa-spinner fa-spin fa-2x"></span>
+  </div>
+  <div *ngIf="($error | async) && !($loading | async)" class="error-message">
+    {{ $error | async }}
+  </div>
+  <div *ngIf="!($loading | async) && !($error | async) && ($todos | async) && ($todos | async).length === 0" class="error-message">
+    There are no Todos to be displayed! Please add one.
+  </div>
+</div>

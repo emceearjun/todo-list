@@ -1,0 +1,68 @@
+div.container {
+  margin: 0 auto;
+  width: 50%;
+  h2 {
+    color: white;
+  }
+  .operations {
+    .add {
+      display: flex;
+      input {
+        width: 100%;
+        padding: 10px;
+        outline: none;
+        font-size: 1rem;
+        color: white;
+        font-weight: 400;
+        border: none;
+        background-color: rgba(white, 0.1);
+        transition: all 0.3s linear;
+
+        &::placeholder {
+          color: rgba(white, 0.5);
+        }
+
+        &:focus {
+          background-color: rgba(white, 0.2);
+        }
+      }
+      button {
+        outline: none;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        width: 42px;
+        transition: all 0.3s linear;
+        cursor: pointer;
+
+        &:hover {
+          background-color: darken($color: #3498db, $amount: 10);
+        }
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    margin: 1rem;
+    padding: 0;
+  }
+
+  .error-message {
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    padding: 1em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  div.container {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  div.container {
+    width: 90%;
+  }
+}

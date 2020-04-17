@@ -1,0 +1,9 @@
+{
+  "todos": [
+    {
+      "title": "This is a sample task",
+      "completed": true,
+      "id": 1
+    }
+  ]
+}

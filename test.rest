@@ -1,0 +1,27 @@
+### Get All
+GET http://localhost:3000/todos
+
+### Get One
+GET http://localhost:3000/todos/:id
+
+### Create new
+POST http://localhost:3000/todos
+content-type: application/json
+
+{
+    "title": "Clean Room",
+    "completed": false
+}
+
+### Update completed
+PUT http://localhost:3000/todos/1
+content-type: application/json
+
+{
+    "title": "Cook Dinner",
+    "completed": true
+}
+
+### Delete
+DELETE http://localhost:3000/todos/3
+

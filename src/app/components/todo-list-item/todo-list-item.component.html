@@ -1,0 +1,14 @@
+<div class="todo-list-item">
+  <div class="title" [class.completed]="completed">{{ title }}</div>
+  <label for="todo-{{index}}">
+    <input
+        type="checkbox"
+        id="todo-{{index}}"
+        name="completed"
+        [checked]="completed"
+        [(ngModel)]="completed"
+        (change)="onChange($event)"
+    />
+    <span class="check"></span>
+  </label>
+</div>
